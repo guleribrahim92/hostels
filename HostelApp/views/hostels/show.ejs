@@ -1,0 +1,17 @@
+<%= include ../partials/header %>
+<h1><%= hostel.name %></h1>
+
+<img src="<%=hostel.image %>">
+
+<p><%=hostel.description %></p>
+<p>
+    <a class="btn btn-success" href="/hostels/<%=hostel._id %>/comments/new">Add New Comment</a>
+</p>
+
+<% hostel.comments.forEach(function(comment){ %>
+    <p>
+        <strong><%=comment.author %></strong> - <%= comment.text %>
+    </p>
+<% }) %>
+
+<%= include ../partials/footer %>
